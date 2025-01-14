@@ -7,11 +7,8 @@ import traceback
 try: 
     FileWriter(config.outputfile).clear_file()
     scraper = WebScraper(config.URL)
-    scraper.crawler()
-    # for link in scraper.parsed_links_set:
-    #     if link is not None:
-    #         FileWriter(config.outputfile).append_to_file(link)
-    # scraper.open_page(config.URL)
+    # scraper.crawler()
+    scraper.fill_and_submit_forms(config.URL)
     scraper.close_driver()
 
 except Exception as e:
